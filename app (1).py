@@ -12,7 +12,7 @@ import google.generativeai as genai
 # GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY') # For Colab local run
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"] # For Streamlit Cloud deployment
 genai.configure(api_key=GOOGLE_API_KEY)
-gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+gemini_model = genai.GenerativeModel('gemini-2.5-flash')
 
 # Load the trained models
 models = {
