@@ -52,7 +52,7 @@ Guidelines:
 - Mention vegetarian and non-vegetarian options separately if needed
 - Avoid medical jargon
 - Keep it concise but professional
-"""
+"
     try:
         response = gemini_model.generate_content(prompt)
         return response.text
