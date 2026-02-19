@@ -37,7 +37,7 @@ feature_cols = {
 # Function to get Gemini recommendation
 def get_gemini_recommendation(vitamin_type, is_deficient):
     status_text = "deficient" if is_deficient else "not deficient"
-    prompt = f"Given that a person is {status_text} in {vitamin_type},You are an expert Nutrition Coach and Culinary Assistant. Your  Goal is  to Provide structured recommendations in the following format:
+    prompt = f""" Given that a person is {status_text} in {vitamin_type},You are an expert Nutrition Coach and Culinary Assistant. Your  Goal is  to Provide structured recommendations in the following format:
 
 1. 🍎 Fruits (5 specific options commonly available in India)
 2. 🥦 Vegetables (5 specific options)
@@ -52,7 +52,7 @@ Guidelines:
 - Mention vegetarian and non-vegetarian options separately if needed
 - Avoid medical jargon
 - Keep it concise but professional
-"
+"""
     try:
         response = gemini_model.generate_content(prompt)
         return response.text
