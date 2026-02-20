@@ -6,13 +6,40 @@ import numpy as np
 import google.generativeai as genai
 # from google.colab import userdata # Commented out as userdata is not available in Streamlit environment
 
-# Configure the Gemini API (assuming API key is set via environment variables for Streamlit Cloud)
-# In a local development environment, you might load it from a .env file or directly set it.
-# For Streamlit Cloud, you can add GOOGLE_API_KEY as a secret.
-# GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY') # For Colab local run
-# Load the professional design from your CSS file
+import streamlit as st
+import google.generativeai as genai
+
+# Load CSS
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# App Header
+st.markdown("<h1 style='text-align: center; color: #1B5E20; font-size: 3rem;'>🥗 GreenGuide AI</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #555;'>The smartest way to eat fresh and stay healthy.</p>", unsafe_allow_html=True)
+st.markdown("---")
+
+# Layout: 2 Columns for Inputs
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    user_query = st.text_input("What are you looking for today?", placeholder="e.g. Best summer fruits for energy")
+
+with col2:
+    diet_goal = st.selectbox("Your Goal", ["Health", "Weight Loss", "Muscle Gain", "Budget"])
+
+# Action Button
+if st.button("✨ Generate My Plan"):
+    if user_query:
+        with st.spinner("🥬 Harvesting the best advice..."):
+            # (Insert your Gemini API Logic Here)
+            # example response:
+            response_text = "### 🍎 Top Picks\n* **Apples**: High fiber.\n* **Berries**: Antioxidant rich.\n\n### 🥗 Meal Idea\n**Fresh Berry Salad**: Mix greens with blueberries and a citrus dressing."
+            
+            # This 'div' applies the 'result-card' style from your CSS file
+            st.markdown(f'<div class="result-card">{response_text}</div>', unsafe_allow_html=True)
+    else:
+        st.warning("Please type something first!")
+
 
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"] # For Streamlit Cloud deployment
 genai.configure(api_key=GOOGLE_API_KEY)
