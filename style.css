@@ -1,19 +1,56 @@
-/* Make buttons rounded and add a shadow */
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+html, body, [class*="st-at"] {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Background gradient */
+.stApp {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Modern Rounded Buttons with Animation */
 .stButton>button {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    height: 3.5em;
+    background: linear-gradient(90deg, #2e7d32, #43a047);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stButton>button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+    color: white;
+}
+
+/* Glassmorphism Effect for AI Results */
+.result-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    height: 3em;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 25px;
+}
+
+/* Custom styling for the Text Input */
+.stTextInput>div>div>input {
+    border-radius: 12px;
+    border: 2px solid transparent;
+    padding: 10px;
     transition: 0.3s;
 }
 
-/* Make the button change color when you hover over it */
-.stButton>button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+.stTextInput>div>div>input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 10px rgba(46, 125, 50, 0.1);
 }
 
-/* Style the text boxes to look cleaner */
-.stTextInput>div>div>input {
-    border-radius: 10px;
-}
