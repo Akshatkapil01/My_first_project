@@ -10,6 +10,10 @@ import google.generativeai as genai
 # In a local development environment, you might load it from a .env file or directly set it.
 # For Streamlit Cloud, you can add GOOGLE_API_KEY as a secret.
 # GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY') # For Colab local run
+# Load the professional design from your CSS file
+with open("style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"] # For Streamlit Cloud deployment
 genai.configure(api_key=GOOGLE_API_KEY)
 gemini_model = genai.GenerativeModel('gemini-2.5-flash')
