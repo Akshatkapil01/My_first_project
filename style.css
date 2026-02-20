@@ -1,0 +1,19 @@
+/* Make buttons rounded and add a shadow */
+.stButton>button {
+    border-radius: 20px;
+    height: 3em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+/* Make the button change color when you hover over it */
+.stButton>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Style the text boxes to look cleaner */
+.stTextInput>div>div>input {
+    border-radius: 10px;
+}
