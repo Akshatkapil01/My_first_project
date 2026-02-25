@@ -1,6 +1,3 @@
-from ui_style.py import apply_custom_style
-apply_custom_style()
-
 # This file will contain the Streamlit application code.
 import streamlit as st
 import joblib
@@ -12,7 +9,7 @@ import google.generativeai as genai
 import streamlit as st
 import google.generativeai as genai
 
-from ui_style.py import apply_custom_style
+from ui_style import apply_custom_style
 apply_custom_style()
 
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"] # For Streamlit Cloud deployment
