@@ -9,7 +9,7 @@ import google.generativeai as genai
 import streamlit as st
 import google.generativeai as genai
 
-from ui_style import apply_custom_style
+from Style.py import apply_custom_style
 apply_custom_style()
 
 
