@@ -9,7 +9,8 @@ import google.generativeai as genai
 import streamlit as st
 import google.generativeai as genai
 
-st.set_page_config(page_title="Pro Recommender", page_icon="🍏", layout="wide")
+from ui_style import apply_custom_style
+apply_custom_style()
 
 
 
