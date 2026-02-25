@@ -12,13 +12,6 @@ import google.generativeai as genai
 from ui_style import apply_custom_style
 apply_custom_style()
 
-from ui_components import show_recommendation
-show_recommendation(
-    fruits=["Banana", "Apple", "Orange"],
-    vegetables=["Spinach", "Broccoli"],
-    meals=["Dal + Brown Rice", "Egg Curry"],
-    exercises=["30 min walking", "Light strength training"]
-)
 
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"] # For Streamlit Cloud deployment
 genai.configure(api_key=GOOGLE_API_KEY)
