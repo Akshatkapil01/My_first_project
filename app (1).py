@@ -64,7 +64,7 @@ Guidelines:
 
 # Streamlit App UI
 st.set_page_config(page_title="Vitamin Deficiency Predictor", layout="centered")
-st.title("Vitamin Deficiency Predictor")
+st.title("AI Vitamin Deficiency Predictor And Personal Diet Recommendation System")
 st.write("Enter patient details to predict vitamin deficiency and get recommendations.")
 
 # Input widgets
