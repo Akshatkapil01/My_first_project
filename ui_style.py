@@ -3,7 +3,7 @@ import streamlit as st
 def apply_custom_style():
 
     st.set_page_config(
-        page_title="AI Vitamin Deficiency Predictor",
+        page_title="AI Vitamin Deficiency Predictor And Recommendation",
         page_icon="🧬",
         layout="centered"
     )
